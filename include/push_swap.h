@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 18:14:00 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/19 18:15:06 by kmarrero         ###   ########.fr       */
+/*   Updated: 2025/07/20 00:17:56 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stddef.h>
 # include <stdlib.h>
+# include <limits.h>
 
 typedef struct s_stack
 {
@@ -27,15 +28,19 @@ typedef struct s_stack
 // Stack creation functions
 t_stack	*ft_stcnew_node(int value);
 t_stack	*ft_stclast(t_stack *lst);
-t_stack	*create_stack(char *str);
+t_stack	*argc_stack_creation(int argc, char **argv);
 void	ft_stcadd_back(t_stack **lst, t_stack *new);
 void	ft_stcadd_front(t_stack **lst, t_stack *new);
 void	ft_stcclear(t_stack **lst);
 void	free_split(char **args);
 
 // Parse functions for arguments
-void	copy_args_to_buffer(int argc, char **argv, char *buffer);
-char	*allocate_buffer(int argc, char **argv);
 char	**args(char *str);
+char	*allocate_buffer(int argc, char **argv);
+void	copy_args_to_buffer(int argc, char **argv, char *buffer);
+
+// function to check for errors
+int		validate_string_arguments(char *arg);
+int		main_validation(char **argv);
 
 #endif

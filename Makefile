@@ -39,7 +39,7 @@ all: $(LIBFT) $(NAME)
 
 # Compile libft if not compiled or outdated
 $(LIBFT):
-	@echo "⚙️📘 Compiling libft..."
+	@echo "⚙️ 📘 Compiling libft..."
 	@$(MAKE) -C $(LIBFT_DIR) > /dev/null 2>&1
 
 # Compile push_swap
@@ -57,12 +57,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 ###########################################
 
 clean:
-	@echo "🧹 Eliminando objetos..."
+	@echo "🧹 Swoosh swoosh... Removing object files..."
 	@rm -rf $(OBJ_DIR)
 	@$(MAKE) -C $(LIBFT_DIR) clean > /dev/null 2>&1
 
 fclean: clean
-	@echo "🧹🧹 Eliminando todo..."
+	@echo "🧹🧹 Swoosh swoosh... Removing everything..."
 	@rm -f $(NAME)
 	@$(MAKE) -C $(LIBFT_DIR) fclean > /dev/null 2>&1
 
