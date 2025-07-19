@@ -1,29 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_stack.c                                     :+:      :+:    :+:   */
+/*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 18:13:42 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/19 15:43:58 by kmarrero         ###   ########.fr       */
+/*   Updated: 2025/07/19 17:38:28 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-
-static char	**args(char *str)
-{
-	char	**args;
-
-	if (!str)
-		return (NULL);
-	args = ft_split(str, ' ');
-	if (!args)
-		return (NULL);
-	return (args);
-}
 
 t_stack	*create_stack(char *str)
 {

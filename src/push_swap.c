@@ -6,7 +6,7 @@
 /*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/19 16:58:48 by kmarrero         ###   ########.fr       */
+/*   Updated: 2025/07/19 18:32:07 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,26 @@ int	main(int argc, char **argv)
 	i = 0;
 	if (argc == 1)
 		return (ft_printf("%s\n", "Error"), 0);
-	str = argv[1];
-	stack_a = create_stack(str);
-	if (!stack_a)
-		return (ft_printf("%s\n", "Error"), 1);
+	if (argc == 2)
+	{
+		str = argv[1];
+		stack_a = create_stack(str);
+		if (!stack_a)
+			return (ft_printf("%s\n", "Error"), 1);
+	}
+	else
+	{
+		str = allocate_buffer(argc, argv);
+		copy_args_to_buffer(argc, argv, str);
+		stack_a = create_stack(str);
+		if (!stack_a)
+			return (ft_printf("%s\n", "Error"), 1);
+		free(str);
+	}
 	current = stack_a;
 	while (current != NULL)
 	{
-		ft_printf("%d ", current->number);
+		ft_printf("%d\n", current->number);
 		current = current->next;
 	}
 	ft_stcclear(&stack_a);

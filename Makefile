@@ -14,6 +14,7 @@ LIBFT_INCLUDE = $(LIBFT_DIR)/include
 # Source files listed manually
 SRC = src/push_swap.c \
 	src/parsers/validations.c \
+	src/parsers/arg_parse.c \
 	src/free/free_split.c \
 	src/stack/stack_utils.c \
 	src/stack/stack_iter.c \
