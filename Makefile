@@ -46,7 +46,6 @@ $(LIBFT):
 $(NAME): $(OBJ_FILES)
 	@echo "🔢 42: Compiling push_swap..."
 	@$(CC) $(CFLAGS) $^ $(LIBFT) -o $@
-	@rm -f $(LIBFT)
 
 # Compile each .c to .o inside obj directory
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
