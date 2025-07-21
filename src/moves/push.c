@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_init.c                                       :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/18 18:13:42 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/21 20:31:47 by kjroy93          ###   ########.fr       */
+/*   Created: 2025/07/21 17:26:54 by kjroy93           #+#    #+#             */
+/*   Updated: 2025/07/21 17:55:26 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-t_stack	*create_stack(char **arguments)
+static void	internal_push(t_stack **stack_operated, t_stack **target)
 {
-	t_stack	*stack;
-	t_stack	*new;
-	int		value;
-	int		i;
+	t_stack	*a;
+	t_stack	*b;
 
-	stack = NULL;
-	i = 0;
-	while (arguments[i])
-	{
-		value = ft_atoi(arguments[i]);
-		new = ft_stcnew_node(value);
-		if (!new)
-		{
-			ft_stcclear(&stack);
-			return (NULL);
-		}
-		ft_stcadd_back(&stack, new);
-		i++;
-	}
-	return (stack);
+	if (!stack_operated || !*stack_operated)
+		return ;
+	a = (*stack_operated);
+	b = a->next;
+	if (b)
+		b->prev = NULL;
+	(*stack_operated) = b;
+	ft_stcadd_front(target, a);
+}
+
+void	pb(t_stack **a, t_stack **b)
+{
+	internal_push(a, b);
+	ft_printf("pb\n");
+}
+
+void	pa(t_stack **a, t_stack **b)
+{
+	internal_push(b, a);
+	ft_printf("pa\n");
 }

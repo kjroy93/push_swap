@@ -6,14 +6,14 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 17:14:40 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/20 00:00:24 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/21 21:18:00 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-char	**args(char *str)
+static char	**args(char *str)
 {
 	char	**args;
 
@@ -25,14 +25,14 @@ char	**args(char *str)
 	return (args);
 }
 
-char	*allocate_buffer(int argc, char **argv)
+static char	*allocate_buffer(int argc, char **argv)
 {
 	char	*buffer;
 	int		size;
 	int		i;
 
-	i = 1;
 	size = 0;
+	i = 1;
 	while (i < argc)
 	{
 		size += ft_strlen(argv[i]);
@@ -46,20 +46,20 @@ char	*allocate_buffer(int argc, char **argv)
 	return (buffer);
 }
 
-void	copy_args_to_buffer(int argc, char **argv, char *buffer)
+static void	copy_args_to_buffer(int argc, char **argv, char *buffer)
 {
 	int	pos;
-	int	len;
+	int len;
 	int	i;
 	int	j;
 
-	pos = 0;
 	i = 1;
+	pos = 0;
 	while (i < argc)
 	{
-		len = ft_strlen(argv[i]);
 		j = 0;
-		while (j < len)
+		len = ft_strlen(argv[i]);
+		while (pos < len)
 		{
 			buffer[pos] = argv[i][j];
 			pos++;
@@ -73,4 +73,40 @@ void	copy_args_to_buffer(int argc, char **argv, char *buffer)
 		i++;
 	}
 	buffer[pos] = '\0';
+}
+
+char	**parse_single_argument(char *arg)
+{
+	char	**arguments;
+
+	arguments = args(arg);
+	if (!arguments)
+		return (NULL);
+	if (!main_validation(arguments))
+	{
+		free_split(arguments);
+		return (NULL);
+	}
+	return (arguments);
+}
+
+char	**parse_multiple_arguments(int argc, char **argv)
+{
+	char	*buffer;
+	char	**arguments;
+
+	buffer = allocate_buffer(argc, argv);
+	if (!buffer)
+		return (NULL);
+	copy_args_to_buffer(argc, argv, buffer);
+	arguments = args(buffer);
+	free(buffer);
+	if (!arguments)
+		return (NULL);
+	if (!main_validation(arguments))
+	{
+		free_split(arguments);
+		return (NULL);
+	}
+	return (arguments);
 }

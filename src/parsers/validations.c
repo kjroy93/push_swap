@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:12:43 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/20 00:52:50 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/21 20:56:50 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,32 +66,19 @@ int	main_validation(char **argv)
 	while (argv[i])
 	{
 		if (!is_valid_integer_format(argv[i]))
-			return (1);
+			return (0);
 		num1 = ft_atoi(argv[i]);
 		j = i + 1;
 		while (argv[j])
 		{
 			if (!is_valid_integer_format(argv[j]))
-				return (1);
+				return (0);
 			num2 = ft_atoi(argv[j]);
 			if (num1 == num2)
-				return (1);
+				return (0);
 			j++;
 		}
 		i++;
 	}
-	return (0);
-}
-
-int	validate_string_arguments(char *arg)
-{
-	char	**args;
-	int		result;
-
-	args = ft_split(arg, ' ');
-	if (!args)
-		return (1);
-	result = main_validation(args);
-	free_split(args);
-	return (result);
+	return (1);
 }
