@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 17:14:40 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/21 21:18:00 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/21 21:37:47 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	copy_args_to_buffer(int argc, char **argv, char *buffer)
 	{
 		j = 0;
 		len = ft_strlen(argv[i]);
-		while (pos < len)
+		while (j < len)
 		{
 			buffer[pos] = argv[i][j];
 			pos++;
