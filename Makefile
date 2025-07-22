@@ -12,13 +12,19 @@ INCLUDE_DIR = include
 LIBFT_INCLUDE = $(LIBFT_DIR)/include
 
 # Source files listed manually
-SRC = src/push_swap.c \
-	src/parsers/validations.c \
-	src/parsers/arg_parse.c \
-	src/free/free_split.c \
-	src/stack/stack_utils.c \
-	src/stack/stack_iter.c \
-	src/stack/stack_init.c
+SRC = src/push_swap.c 				\
+	src/parsers/validations.c 		\
+	src/parsers/arg_parse.c 		\
+	src/free/free_split.c 			\
+	src/stack/stack_utils.c 		\
+	src/stack/stack_iter.c 			\
+	src/stack/stack_init.c 			\
+	src/moves/push.c 				\
+	src/moves/rotate.c 				\
+	src/moves/swap.c				\
+	src/moves/reverse_rotation.c	\
+	src/sort/calculate_cost.c 		\
+	src/sort/get_target.c 			\
 
 # Object files
 OBJ = $(SRC:.c=.o)

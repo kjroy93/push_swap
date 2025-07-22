@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/21 20:59:43 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/23 01:06:29 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	t_stack	*current;
 	char	**arguments;
 
-	if (!argv || argc == 1)
+	if (!argv || argc == 1 || only_whitespaces(argv))
 		return (ft_printf("%s\n", "Error"), 0);
 	arguments = validations(argc, argv);
 	if (!arguments)

@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 18:14:00 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/22 23:54:17 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/23 00:51:54 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ char	**parse_single_argument(char *arg);
 
 // Function to check for errors
 int		main_validation(char **argv);
+int		only_whitespaces(char **argv);
 
 void	assign_targets(t_stack *a, t_stack *b);
 t_move find_best_move(t_stack *a, t_stack *b);

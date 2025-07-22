@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:12:43 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/21 21:42:10 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/23 01:06:36 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,26 @@ static int	is_valid_integer_format(char *str)
 	}
 	if (!is_valid_range(str + i, sign))
 		return (0);
+	return (1);
+}
+
+int	only_whitespaces(char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if (argv[i][j] != ' ' && (argv[i][j] < 9 || argv[i][j] > 13))
+				return (0);
+			j++;
+		}
+		i++;
+	}
 	return (1);
 }
 

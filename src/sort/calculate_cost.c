@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:36:40 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/22 23:49:57 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/23 00:04:58 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ t_move find_best_move(t_stack *a, t_stack *b)
 		current_move = get_move_info(a, b, a);
 		if (current_move.total_moves < best_move.total_moves)
 			best_move = current_move;
-		a->next;
+		a = a->next;
 	}
 	return (best_move);
 }
