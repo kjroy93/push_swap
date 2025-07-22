@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 18:14:00 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/22 20:58:05 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/22 21:44:04 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ typedef struct s_cost
 
 typedef struct s_move
 {
+	int		total_moves;
 	t_stack *node;	// Node of stack A
 	t_cost	cost;
-	int		total_moves;
 } 	t_move;
 
 // Stack creation functions
