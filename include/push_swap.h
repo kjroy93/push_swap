@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 18:14:00 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/22 20:45:21 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/22 20:56:57 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,6 @@ typedef struct s_stack
 	struct s_stack	*prev;
 	struct s_stack	*target;
 }	t_stack;
-
-typedef struct s_cost
-{
-	int cost_a;
-	int cost_b;
-} 	t_cost;
-
-typedef struct s_move
-{
-	t_stack *node;	// Node of stack A
-	t_cost	cost;
-	int		total_moves;
-} 	t_move;
 
 // Stack creation functions
 t_stack	*create_stack(char **arguments);
