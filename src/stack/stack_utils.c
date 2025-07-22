@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:08:44 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/19 15:44:27 by kmarrero         ###   ########.fr       */
+/*   Updated: 2025/07/22 19:51:37 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ t_stack	*ft_stcnew_node(int value)
 	new_node = (t_stack *)malloc(sizeof(t_stack));
 	if (!new_node)
 		return (NULL);
-	new_node->index = -1;
+	new_node->pos = -1;
 	new_node->number = value;
 	new_node->next = NULL;
 	new_node->prev = NULL;
+	new_node->target = NULL;
 	return (new_node);
 }
 
@@ -49,7 +50,7 @@ void	ft_stcadd_front(t_stack **lst, t_stack *new)
 	if (!lst || !*lst)
 		return ;
 	new->next = *lst;
-	new->index = -1;
+	new->pos = -1;
 	new->prev = NULL;
 	if (*lst)
 		(*lst)->prev = new;

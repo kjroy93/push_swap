@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 18:14:00 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/21 20:35:00 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/22 20:45:21 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,24 @@
 typedef struct s_stack
 {
 	int				number;
-	int				index;
+	int				pos;
 	struct s_stack	*next;
 	struct s_stack	*prev;
+	struct s_stack	*target;
 }	t_stack;
+
+typedef struct s_cost
+{
+	int cost_a;
+	int cost_b;
+} 	t_cost;
+
+typedef struct s_move
+{
+	t_stack *node;	// Node of stack A
+	t_cost	cost;
+	int		total_moves;
+} 	t_move;
 
 // Stack creation functions
 t_stack	*create_stack(char **arguments);
@@ -40,6 +54,8 @@ char	**parse_single_argument(char *arg);
 
 // Function to check for errors
 int		main_validation(char **argv);
+
+void	assign_targets(t_stack *a, t_stack *b);
 
 // Instructions to move the nodes in the stacks
 void	rra(t_stack **a);

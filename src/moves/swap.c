@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 14:19:17 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/21 18:03:04 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/22 19:18:20 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	swap_internal(t_stack **stack_operated)
 		second->next->prev = first;
 	second->prev = NULL;
 	second->next = first;
-	first->next = second;
+	first->prev = second;
 	*stack_operated = second;
 }
 
