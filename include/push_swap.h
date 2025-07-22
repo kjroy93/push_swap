@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 18:14:00 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/22 21:44:04 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/22 23:54:17 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ char	**parse_single_argument(char *arg);
 int		main_validation(char **argv);
 
 void	assign_targets(t_stack *a, t_stack *b);
+t_move find_best_move(t_stack *a, t_stack *b);
 
 // Instructions to move the nodes in the stacks
 void	rra(t_stack **a);
