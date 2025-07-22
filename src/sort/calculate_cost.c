@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:36:40 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/22 20:56:42 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/22 21:12:56 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,16 @@ int	calculate_cost(int pos, int size)
 		return (pos);
 	else
 		return (pos - size);
+}
+
+int	calculate_total_moves(int cost_a, int cost_b)
+{
+	int	remainer;
+	int	common;
+
+	if ((cost_a >= 0 && cost_b >= 0) || cost_a <= 0 && cost_b <= 0)
+	{
+		if (abs(cost_a) < abs(cost_b))
+			
+	}
 }

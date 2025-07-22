@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_iter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:10:43 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/19 14:09:32 by kmarrero         ###   ########.fr       */
+/*   Updated: 2025/07/22 21:41:43 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,17 @@ int	ft_stcsize(t_stack *lst)
 		tmp = tmp->next;
 	}
 	return (size);
+}
+
+void	give_node_a_position(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while (stack)
+	{
+		stack->pos = i;
+		stack = stack->next;
+		i++;
+	}
 }
