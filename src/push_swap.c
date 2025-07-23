@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/23 01:06:29 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/23 22:51:06 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,38 @@ static char	**validations(int argc, char **argv)
 		return (parse_multiple_arguments(argc, argv));
 }
 
+static void	operations(t_stack **a, t_stack **b)
+{
+	t_move	move;
+	int		size;
+
+	prepare_stacks(*a, *b);
+	pb(a, b);
+	if (*b)
+		ft_printf("Esto se ha movido a b: %d\n", (*b)->number);
+	sleep(4);
+	pb(a, b);
+	if (*b && (*b)->next)
+		ft_printf("Esto se ha movido a b: %d\n", (*b)->number);
+	size = stack_size(*a);
+	while (size > 3)
+	{
+		update_positions(*a);
+		update_positions(*b);
+		assign_targets(*a, *b);
+		sleep(2);
+		move = find_best_move(*a, *b);
+		sleep(2);
+		move_nodes(a, b, &move);
+		sleep(2);
+		size--;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
+	t_stack *stack_b;
 	t_stack	*current;
 	char	**arguments;
 
@@ -38,13 +67,14 @@ int	main(int argc, char **argv)
 		free_split(arguments);
 		return (0);
 	}
-	current = stack_a;
-	while (current != NULL)
+	stack_b = NULL;
+	operations(&stack_a, &stack_b);
+	current = stack_b;
+	while (current)
 	{
-		ft_printf("%d ", current->number);
+		ft_printf("%d\n", current->number);
+		sleep(4);
 		current = current->next;
 	}
-	ft_stcclear(&stack_a);
-	free_split(arguments);
 	return (0);
 }

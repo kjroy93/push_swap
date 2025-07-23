@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:08:44 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/22 19:51:37 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/23 21:17:24 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,9 @@ void	ft_stcadd_back(t_stack **lst, t_stack *new)
 
 void	ft_stcadd_front(t_stack **lst, t_stack *new)
 {
-	if (!lst || !*lst)
+	if (!lst || !new)
 		return ;
 	new->next = *lst;
-	new->pos = -1;
 	new->prev = NULL;
 	if (*lst)
 		(*lst)->prev = new;

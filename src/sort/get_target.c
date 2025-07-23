@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:22:56 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/22 20:55:42 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/23 20:59:53 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ static t_stack	*find_target_node(t_stack *a_node, t_stack *b)
 {
 	t_stack	*current;
 	t_stack	*target;
-	int	min_diff;
-	int	diff;
+	int		min_diff;
+	int 	diff;
 
 	target = NULL;
 	min_diff = INT_MAX;
 	current = b;
-	while(current)
+	while (current)
 	{
 		if (current->number > a_node->number)
 		{
@@ -72,5 +72,18 @@ void	assign_targets(t_stack *a, t_stack *b)
 	{
 		a->target = find_target_node(a, b);
 		a = a->next;
+	}
+}
+
+void	update_positions(t_stack *stack)
+{
+	int	i;
+
+	i = 0;
+	while(stack)
+	{
+		stack->pos = i;
+		stack = stack->next;
+		i++;
 	}
 }

@@ -6,13 +6,13 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:36:40 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/23 00:04:58 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/23 22:02:59 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	stack_size(t_stack *stack)
+int	stack_size(t_stack *stack)
 {
 	int	size;
 
