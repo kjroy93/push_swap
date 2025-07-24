@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/25 00:08:56 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 01:14:10 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,7 @@ static void	operations(t_stack **a, t_stack **b)
 	size = stack_size(*a);
 	while (size > 3)
 	{
-		update_positions(*a);
-		update_positions(*b);
-		assign_targets(*a, *b);
+		prepare_stacks(*a, *b);
 		move = find_best_move(*a, *b);
 		move_nodes(a, b, &move);
 		size--;
