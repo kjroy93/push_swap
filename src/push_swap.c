@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/23 22:51:06 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/24 18:33:53 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ static void	operations(t_stack **a, t_stack **b)
 	pb(a, b);
 	if (*b)
 		ft_printf("Esto se ha movido a b: %d\n", (*b)->number);
-	sleep(4);
 	pb(a, b);
 	if (*b && (*b)->next)
 		ft_printf("Esto se ha movido a b: %d\n", (*b)->number);
@@ -40,11 +39,8 @@ static void	operations(t_stack **a, t_stack **b)
 		update_positions(*a);
 		update_positions(*b);
 		assign_targets(*a, *b);
-		sleep(2);
 		move = find_best_move(*a, *b);
-		sleep(2);
 		move_nodes(a, b, &move);
-		sleep(2);
 		size--;
 	}
 }

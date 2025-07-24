@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:36:40 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/23 22:02:59 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/24 19:40:09 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,10 @@ static int	calculate_total_moves(int cost_a, int cost_b)
 		return (abs(cost_a) + abs(cost_b));
 }
 
-static t_move	get_move_info(t_stack *a, t_stack *b, t_stack *node_a)
+static t_move	get_move_info(t_stack *node_a, int size_a, int size_b)
 {
 	t_move	move_info;
-	int		size_a;
-	int		size_b;
 
-	size_a = stack_size(a);
-	size_b = stack_size(b);
 	move_info.node = node_a;
 	move_info.cost.cost_a = calculate_cost(node_a->pos, size_a);
 	move_info.cost.cost_b = calculate_cost(node_a->target->pos, size_b);
@@ -73,17 +69,23 @@ static t_move	get_move_info(t_stack *a, t_stack *b, t_stack *node_a)
 
 t_move find_best_move(t_stack *a, t_stack *b)
 {
+	t_stack	*tmp;
 	t_move	current_move;
 	t_move	best_move;
-
+	int		size_a;
+	int		size_b;
+	
+	tmp = a;
 	best_move.total_moves = INT_MAX;
 	best_move.node = NULL;
-	while(a)
+	size_a = stack_size(a);
+	size_b = stack_size(b);
+	while(tmp)
 	{
-		current_move = get_move_info(a, b, a);
+		current_move = get_move_info(tmp, size_a, size_b);
 		if (current_move.total_moves < best_move.total_moves)
 			best_move = current_move;
-		a = a->next;
+		tmp = tmp->next;
 	}
 	return (best_move);
 }
