@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 18:36:57 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/21 19:14:27 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/24 23:58:24 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,21 +29,24 @@ static void	internal_reverse_rotation(t_stack **stack_operated)
 	*stack_operated = second;
 }
 
-void	rra(t_stack **a)
+void	rra(t_stack **a, bool print)
 {
 	internal_reverse_rotation(a);
-	ft_printf("rra\n");
+		if (print)
+			print_instruction("rra");
 }
 
-void	rrb(t_stack **b)
+void	rrb(t_stack **b, bool print)
 {
 	internal_reverse_rotation(b);
-	ft_printf("rrb\n");
+		if (print)
+			print_instruction("rrb");
 }
 
-void	rrr(t_stack **a, t_stack **b)
+void	rrr(t_stack **a, t_stack **b, bool print)
 {
-	internal_reverse_rotation(a);
-	internal_reverse_rotation(b);
-	ft_printf("rrr\n");
+	rra(a, false);
+	rrb(b, false);
+	if (print)
+		print_instruction("rrr");
 }

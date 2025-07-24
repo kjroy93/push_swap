@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/24 18:33:53 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 00:08:56 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ static void	operations(t_stack **a, t_stack **b)
 	int		size;
 
 	prepare_stacks(*a, *b);
-	pb(a, b);
+	pb(a, b, true);
 	if (*b)
 		ft_printf("Esto se ha movido a b: %d\n", (*b)->number);
-	pb(a, b);
+	pb(a, b, true);
 	if (*b && (*b)->next)
 		ft_printf("Esto se ha movido a b: %d\n", (*b)->number);
 	size = stack_size(*a);
@@ -51,6 +51,7 @@ int	main(int argc, char **argv)
 	t_stack *stack_b;
 	t_stack	*current;
 	char	**arguments;
+	int		count;
 
 	if (!argv || argc == 1 || only_whitespaces(argv))
 		return (ft_printf("%s\n", "Error"), 0);
@@ -69,8 +70,9 @@ int	main(int argc, char **argv)
 	while (current)
 	{
 		ft_printf("%d\n", current->number);
-		sleep(4);
 		current = current->next;
 	}
+	count = get_instruction_count();
+	ft_printf("Instructions: %d\n", count);
 	return (0);
 }

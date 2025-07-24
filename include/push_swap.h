@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 18:14:00 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/23 22:03:13 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 00:04:07 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdbool.h>
 
 typedef struct s_stack
 {
@@ -62,18 +63,21 @@ void	update_positions(t_stack *stack);
 void	move_nodes(t_stack **a, t_stack **b, t_move *move);
 void	prepare_stacks(t_stack *a, t_stack *b);
 int		stack_size(t_stack *stack);
+void	sort_three(t_stack **stack);
+void	print_instruction(const char *instr);
+int		get_instruction_count(void);
 
 // Instructions to move the nodes in the stacks
-void	rra(t_stack **a);
-void	ra(t_stack **a);
-void	sa(t_stack **a);
-void	rrb(t_stack **b);
-void	rb(t_stack **b);
-void	sb(t_stack **b);
-void	rrr(t_stack **a, t_stack **b);
-void	rr(t_stack **a, t_stack **b);
-void	ss(t_stack **a, t_stack **b);
-void	pb(t_stack **a, t_stack **b);
-void	pa(t_stack **a, t_stack **b);
+void	rra(t_stack **a, bool print);
+void	ra(t_stack **a, bool print);
+void	sa(t_stack **a, bool print);
+void	rrb(t_stack **b, bool print);
+void	rb(t_stack **b, bool print);
+void	sb(t_stack **b, bool print);
+void	rrr(t_stack **a, t_stack **b, bool print);
+void	rr(t_stack **a, t_stack **b, bool print);
+void	ss(t_stack **a, t_stack **b, bool print);
+void	pb(t_stack **a, t_stack **b, bool print);
+void	pa(t_stack **a, t_stack **b, bool print);
 
 #endif

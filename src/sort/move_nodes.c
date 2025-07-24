@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 18:33:41 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/23 22:24:41 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 00:05:40 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ static void	reverse_rotate_both(t_stack **a, t_stack **b, t_move *move)
 {
 	while (move->cost.cost_a > 0 && move->cost.cost_b > 0)
 	{
-		rr(a, b);
+		rr(a, b, true);
 		move->cost.cost_a--;
 		move->cost.cost_b--;
 	}
 	while (move->cost.cost_a < 0 && move->cost.cost_b < 0)
 	{
-		rrr(a, b);
+		rrr(a, b, true);
 		move->cost.cost_a++;
 		move->cost.cost_b++;
 	}
@@ -39,22 +39,22 @@ static void rotate_one_stack(t_stack **a, t_stack **b, t_move *move)
 {
 	while (move->cost.cost_a > 0)
 	{
-		ra(a);
+		ra(a, true);
 		move->cost.cost_a--;
 	}
 	while (move->cost.cost_a < 0)
 	{
-		rra(a);
+		rra(a, true);
 		move->cost.cost_a++;
 	}
 	while (move->cost.cost_b > 0)
 	{
-		rb(b);
+		rb(b, true);
 		move->cost.cost_b--;
 	}
 	while (move->cost.cost_b < 0)
 	{
-		rrb(b);
+		rrb(b, true);
 		move->cost.cost_b++;
 	}
 }
@@ -63,5 +63,5 @@ void	move_nodes(t_stack **a, t_stack **b, t_move *move)
 {
 	reverse_rotate_both(a, b, move);
 	rotate_one_stack(a, b, move);
-	pb(a, b);
+	pb(a, b, true);
 }

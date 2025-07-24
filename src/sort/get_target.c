@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:22:56 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/24 18:45:29 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 00:38:00 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ t_stack	*find_target_node(t_stack *a_node, t_stack *b)
 		target = find_max(b);
 	return (target);
 }
-
 
 // Asign targets from nodes in stack a -> to nodes in stack b
 void	assign_targets(t_stack *a, t_stack *b)

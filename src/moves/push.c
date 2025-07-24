@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 17:26:54 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/21 17:55:26 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 00:03:20 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,16 @@ static void	internal_push(t_stack **stack_operated, t_stack **target)
 	ft_stcadd_front(target, a);
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	pb(t_stack **a, t_stack **b, bool print)
 {
 	internal_push(a, b);
-	ft_printf("pb\n");
+	if (print)
+		print_instruction("pb");
 }
 
-void	pa(t_stack **a, t_stack **b)
+void	pa(t_stack **a, t_stack **b, bool print)
 {
 	internal_push(b, a);
-	ft_printf("pa\n");
+	if (print)
+		print_instruction("pa");
 }

@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 14:19:17 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/22 19:18:20 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 00:00:59 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,24 @@ static void	swap_internal(t_stack **stack_operated)
 	*stack_operated = second;
 }
 
-void	sa(t_stack **a)
+void	sa(t_stack **a, bool print)
 {
 	swap_internal(a);
-	ft_printf("sa\n");
+	if (print)
+		print_instruction("sa");
 }
 
-void	sb(t_stack **b)
+void	sb(t_stack **b, bool print)
 {
 	swap_internal(b);
-	ft_printf("sb\n");
+	if (print)
+		print_instruction("sb");
 }
 
-void	ss(t_stack **a, t_stack **b)
+void	ss(t_stack **a, t_stack **b, bool print)
 {
 	swap_internal(a);
 	swap_internal(b);
-	ft_printf("ss\n");
+	if (print)
+		print_instruction("ss");
 }

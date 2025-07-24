@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:36:40 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/24 19:40:09 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 00:17:16 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ static int	calculate_total_moves(int cost_a, int cost_b)
 {
 	int	remainer;
 	int	common;
+	int	total;
 
 	// Optimization for rrr or rr
 	if ((cost_a >= 0 && cost_b >= 0) || (cost_a <= 0 && cost_b <= 0))
@@ -46,11 +47,12 @@ static int	calculate_total_moves(int cost_a, int cost_b)
 		else
 			common = abs(cost_b);
 		remainer = abs(cost_a - cost_b); // Difference to obtain the not common moves
-		return (common + remainer);
+		total = (common + remainer);
 	}
 	// You can't use rr or rrr. The pos in the stack is not on the same side
 	else
-		return (abs(cost_a) + abs(cost_b));
+		total = (abs(cost_a) + abs(cost_b));
+	return (total + 1);
 }
 
 static t_move	get_move_info(t_stack *node_a, int size_a, int size_b)

@@ -19,6 +19,7 @@ SRC = src/push_swap.c 				\
 	src/stack/stack_utils.c 		\
 	src/stack/stack_iter.c 			\
 	src/stack/stack_init.c 			\
+	src/stack/print.c				\
 	src/moves/push.c 				\
 	src/moves/rotate.c 				\
 	src/moves/swap.c				\
