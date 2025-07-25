@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/25 19:48:06 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 19:59:16 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ static void phase_2(t_stack **a, t_stack **b)
 	update_positions(*a);
 	clear_targets(a);
 	size = stack_size(*a);
-	while (size != 0)
-		align_stack_a(a, size);
+	align_stack_a(a);
 }
 
 static void phase_1(t_stack **a, t_stack **b)
