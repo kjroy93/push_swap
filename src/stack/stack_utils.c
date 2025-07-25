@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:08:44 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/23 21:17:24 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 13:44:52 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,11 @@ void	ft_stcclear(t_stack **lst)
 		(*lst) = NULL;
 		*lst = temp;
 	}
+}
+
+void	prepare_stacks(t_stack *a, t_stack *b)
+{
+	update_positions(a);
+	update_positions(b);
+	assign_targets(a, b);	
 }

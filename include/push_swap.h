@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 18:14:00 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/25 00:04:07 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 14:16:18 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ t_stack	*ft_stclast(t_stack *lst);
 void	ft_stcadd_front(t_stack **lst, t_stack *new);
 void	ft_stcadd_back(t_stack **lst, t_stack *new);
 void	ft_stcclear(t_stack **lst);
+int		stack_size(t_stack *stack);
 void	free_split(char **args);
 
 // Functions to parse the arguments from main
@@ -54,15 +55,13 @@ char	**parse_multiple_arguments(int argc, char **argv);
 char	**parse_single_argument(char *arg);
 
 // Function to check for errors
-int		main_validation(char **argv);
 int		only_whitespaces(char **argv);
 
-void	assign_targets(t_stack *a, t_stack *b);
 t_move 	find_best_move(t_stack *a, t_stack *b);
-void	update_positions(t_stack *stack);
-void	move_nodes(t_stack **a, t_stack **b, t_move *move);
 void	prepare_stacks(t_stack *a, t_stack *b);
-int		stack_size(t_stack *stack);
+void	assign_targets(t_stack *a, t_stack *b);
+void	move_nodes(t_stack **a, t_stack **b, t_move *move);
+void	update_positions(t_stack *stack);
 void	sort_three(t_stack **stack);
 void	print_instruction(const char *instr);
 int		get_instruction_count(void);

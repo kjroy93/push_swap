@@ -6,18 +6,11 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 18:33:41 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/25 00:05:40 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 13:44:46 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	prepare_stacks(t_stack *a, t_stack *b)
-{
-	update_positions(a);
-	update_positions(b);
-	assign_targets(a, b);	
-}
 
 static void	reverse_rotate_both(t_stack **a, t_stack **b, t_move *move)
 {

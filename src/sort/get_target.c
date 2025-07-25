@@ -6,14 +6,13 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:22:56 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/25 00:38:00 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 14:06:36 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
-t_stack	*find_max(t_stack *b)
+static t_stack	*find_max(t_stack *b)
 {
 	t_stack *max;
 
@@ -27,10 +26,9 @@ t_stack	*find_max(t_stack *b)
 	return (max);
 }
 
-
 // Finds the best target for node A in stack B, following the logic: 
 // The closest smaller number, or the maximum if no smaller exists.
-t_stack	*find_target_node(t_stack *a_node, t_stack *b)
+static t_stack	*find_target_node(t_stack *a_node, t_stack *b)
 {
 	t_stack	*current;
 	t_stack	*target;
@@ -60,18 +58,5 @@ void	assign_targets(t_stack *a, t_stack *b)
 	{
 		a->target = find_target_node(a, b);
 		a = a->next;
-	}
-}
-
-void	update_positions(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	while(stack)
-	{
-		stack->pos = i;
-		stack = stack->next;
-		i++;
 	}
 }

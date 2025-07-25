@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:12:43 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/23 01:06:36 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 14:12:10 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,26 +55,6 @@ static int	is_valid_integer_format(char *str)
 	return (1);
 }
 
-int	only_whitespaces(char **argv)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	while (argv[i])
-	{
-		j = 0;
-		while (argv[i][j])
-		{
-			if (argv[i][j] != ' ' && (argv[i][j] < 9 || argv[i][j] > 13))
-				return (0);
-			j++;
-		}
-		i++;
-	}
-	return (1);
-}
-
 int	main_validation(char **argv)
 {
 	int	num1;
@@ -95,6 +75,26 @@ int	main_validation(char **argv)
 				return (0);
 			num2 = ft_atoi(argv[j]);
 			if (num1 == num2)
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
+
+int	only_whitespaces(char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (argv[i])
+	{
+		j = 0;
+		while (argv[i][j])
+		{
+			if (argv[i][j] != ' ' && (argv[i][j] < 9 || argv[i][j] > 13))
 				return (0);
 			j++;
 		}
