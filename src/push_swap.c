@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/25 19:59:16 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 20:32:59 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 static char	**validations(int argc, char **argv)
 {
+	if (!argv || argc == 1 || only_whitespaces(argv))
+		return (NULL);
 	if (argc == 2)
 		return (parse_single_argument(argv[1]));
 	else
@@ -65,31 +67,27 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack *stack_b;
-	t_stack	*current;
 	char	**arguments;
 	int		count;
 
-	if (!argv || argc == 1 || only_whitespaces(argv))
-		return (ft_printf("%s\n", "Error"), 0);
 	arguments = validations(argc, argv);
 	if (!arguments)
-		return (ft_printf("%s\n", "Error"), 0);
+	{
+		ft_printf("%s\n", "Error");
+		return (0);
+	}
 	stack_a = create_stack(arguments);
 	if (!stack_a)
 	{
-		free_split(arguments);
+		ft_printf("%s\n", "Error");
 		return (0);
 	}
 	stack_b = NULL;
 	phase_1(&stack_a, &stack_b);
 	phase_2(&stack_a, &stack_b);
-	current = stack_a;
-	while (current)
-	{
-		ft_printf("%d\n", current->number);
-		current = current->next;
-	}
 	count = get_instruction_count();
 	ft_printf("Instructions: %d\n", count);
+	free_split(arguments);
+	ft_stcclear(&stack_a);
 	return (0);
 }
