@@ -25,8 +25,10 @@ SRC = src/push_swap.c 				\
 	src/moves/swap.c				\
 	src/moves/reverse_rotation.c	\
 	src/sort/calculate_cost.c 		\
-	src/sort/get_target.c 			\
+	src/sort/get_targets_in_a.c		\
+	src/sort/get_targets_in_b.c 	\
 	src/sort/move_nodes.c			\
+	src/sort/sort_three.c			\
 
 # Object files
 OBJ = $(SRC:.c=.o)

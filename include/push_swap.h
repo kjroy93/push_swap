@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 18:14:00 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/25 14:16:18 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 16:59:02 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,19 @@ char	**parse_single_argument(char *arg);
 
 // Function to check for errors
 int		only_whitespaces(char **argv);
+int		main_validation(char **argv);
 
 t_move 	find_best_move(t_stack *a, t_stack *b);
-void	prepare_stacks(t_stack *a, t_stack *b);
+void	prepare_stacks(t_stack *a, t_stack *b, char target);
 void	assign_targets(t_stack *a, t_stack *b);
-void	move_nodes(t_stack **a, t_stack **b, t_move *move);
+void	assign_target_in_a(t_stack *a, t_stack *b);
+void	move_nodes(t_stack **a, t_stack **b, t_move *move, char target);
 void	update_positions(t_stack *stack);
 void	sort_three(t_stack **stack);
 void	print_instruction(const char *instr);
 int		get_instruction_count(void);
+
+t_move	find_move_to_a(t_stack *a, t_stack *b);
 
 // Instructions to move the nodes in the stacks
 void	rra(t_stack **a, bool print);

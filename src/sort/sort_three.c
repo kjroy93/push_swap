@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 20:34:54 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/25 00:13:01 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 17:02:26 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	sort_three(t_stack **stack)
 
 	if (!stack || !*stack || !(*stack)->next || !(*stack)->next->next)
 		return ;
-	a = (*stack);
+	a = (*stack)->number;
 	b = (*stack)->next->number;
-	c = (*stack)->next->next->next;
+	c = (*stack)->next->next->number;
 	if (a > b && b < c && a < c)
 		sa(stack, true);
 	else if (a > b && b > c)

@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 18:33:41 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/25 13:44:46 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 16:51:35 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,18 @@ static void rotate_one_stack(t_stack **a, t_stack **b, t_move *move)
 	}
 }
 
-void	move_nodes(t_stack **a, t_stack **b, t_move *move)
+void	move_nodes(t_stack **a, t_stack **b, t_move *move, char target)
 {
-	reverse_rotate_both(a, b, move);
-	rotate_one_stack(a, b, move);
-	pb(a, b, true);
+	if (target == 'b')
+	{
+		reverse_rotate_both(a, b, move);
+		rotate_one_stack(a, b, move);
+		pb(a, b, true);
+	}
+	else if (target == 'a')
+	{
+		reverse_rotate_both(a, b, move);
+		rotate_one_stack(a, b, move);
+		pa(a, b, true);
+	}
 }
