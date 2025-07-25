@@ -6,13 +6,13 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:36:40 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/25 17:14:43 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 19:16:25 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	calculate_cost(int pos, int size)
+int	calculate_cost(int pos, int size)
 {
 	if (pos <= size / 2)
 		return (pos);

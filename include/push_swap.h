@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 18:14:00 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/25 16:59:02 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 19:45:05 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_stcadd_back(t_stack **lst, t_stack *new);
 void	ft_stcclear(t_stack **lst);
 int		stack_size(t_stack *stack);
 void	free_split(char **args);
+void	clear_targets(t_stack **stack);
 
 // Functions to parse the arguments from main
 char	**parse_multiple_arguments(int argc, char **argv);
@@ -59,16 +60,17 @@ int		only_whitespaces(char **argv);
 int		main_validation(char **argv);
 
 t_move 	find_best_move(t_stack *a, t_stack *b);
+t_move	find_move_to_a(t_stack *a, t_stack *b);
 void	prepare_stacks(t_stack *a, t_stack *b, char target);
 void	assign_targets(t_stack *a, t_stack *b);
 void	assign_target_in_a(t_stack *a, t_stack *b);
 void	move_nodes(t_stack **a, t_stack **b, t_move *move, char target);
 void	update_positions(t_stack *stack);
 void	sort_three(t_stack **stack);
+void	align_stack_a(t_stack **a, int size);
+int		calculate_cost(int pos, int size);
 void	print_instruction(const char *instr);
 int		get_instruction_count(void);
-
-t_move	find_move_to_a(t_stack *a, t_stack *b);
 
 // Instructions to move the nodes in the stacks
 void	rra(t_stack **a, bool print);

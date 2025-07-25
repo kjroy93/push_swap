@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 18:33:41 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/25 18:36:52 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 19:44:12 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,30 @@ void	move_nodes(t_stack **a, t_stack **b, t_move *move, char target)
 	}
 }
 
-void	align_stack_a(t_stack **a)
+void	align_stack_a(t_stack **a, int size)
 {
 	t_stack	*min_node;
-	
+	int		cost;
+	int		size;
+	int		pos;
+
+	min_node = find_min(a);
+	pos = min_node->pos;
+	cost = calculate_cost(min_node->pos, size);
+	while (cost > 0)
+	{
+		if (cost > 0)
+		{
+			ra(a, true);
+			print_instruction("ra\n");
+			cost--;
+		}
+		else
+		{
+			rra(a, true);
+			print_instruction("rra\n");
+			cost++;
+		}
+		update_positions(*a);
+	}
 }
