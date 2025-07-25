@@ -6,11 +6,25 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 18:33:41 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/25 19:44:12 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 19:52:46 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static t_stack	*find_min(t_stack *a)
+{
+	t_stack	*min;
+
+	min = a;
+	while (a)
+	{
+		if (a->number < min->number)
+			min = a;
+		a = a->next;
+	}
+	return (min);
+}
 
 static void	reverse_rotate_both(t_stack **a, t_stack **b, t_move *move)
 {
@@ -72,11 +86,8 @@ void	align_stack_a(t_stack **a, int size)
 {
 	t_stack	*min_node;
 	int		cost;
-	int		size;
-	int		pos;
 
-	min_node = find_min(a);
-	pos = min_node->pos;
+	min_node = find_min(*a);
 	cost = calculate_cost(min_node->pos, size);
 	while (cost > 0)
 	{
