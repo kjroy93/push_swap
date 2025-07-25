@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 18:33:41 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/25 16:51:35 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 18:36:52 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,10 @@ void	move_nodes(t_stack **a, t_stack **b, t_move *move, char target)
 		rotate_one_stack(a, b, move);
 		pa(a, b, true);
 	}
+}
+
+void	align_stack_a(t_stack **a)
+{
+	t_stack	*min_node;
+	
 }
