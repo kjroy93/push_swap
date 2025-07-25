@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 18:14:00 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/25 19:58:11 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 20:16:16 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ char	**parse_single_argument(char *arg);
 int		only_whitespaces(char **argv);
 int		main_validation(char **argv);
 
+// Sort the stacks
 t_move 	find_best_move(t_stack *a, t_stack *b);
 t_move	find_move_to_a(t_stack *a, t_stack *b);
 void	prepare_stacks(t_stack *a, t_stack *b, char target);

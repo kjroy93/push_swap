@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 18:33:41 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/25 19:59:07 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 20:05:01 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,13 +96,13 @@ void	align_stack_a(t_stack **a)
 		if (cost > 0)
 		{
 			ra(a, true);
-			print_instruction("ra\n");
+			print_instruction("ra");
 			cost--;
 		}
 		else
 		{
 			rra(a, true);
-			print_instruction("rra\n");
+			print_instruction("rra");
 			cost++;
 		}
 	}
