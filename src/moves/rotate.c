@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 18:04:43 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/24 23:59:36 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 21:19:50 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,8 @@ void	rr(t_stack **a, t_stack **b, bool print)
 	ra(a, false);
 	rb(b, false);
 	if (print)
-		print_instruction("rr");
+	{
+		print_instruction("ra");
+		print_instruction("rb");
+	}
 }

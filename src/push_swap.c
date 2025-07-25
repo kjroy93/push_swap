@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/25 20:58:35 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 21:25:30 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
 	t_stack *stack_b;
+	// t_stack	*current;
 	char	**arguments;
 
 	arguments = validations(argc, argv);
@@ -78,13 +79,20 @@ int	main(int argc, char **argv)
 	stack_a = create_stack(arguments);
 	if (!stack_a)
 	{
+		ft_stcclear(&stack_a);
+		free_split(arguments);
 		ft_printf("%s\n", "Error");
 		return (0);
 	}
+	free_split(arguments);
 	stack_b = NULL;
 	phase_1(&stack_a, &stack_b);
 	phase_2(&stack_a, &stack_b);
-	free_split(arguments);
-	ft_stcclear(&stack_a);
+	// current = stack_a;
+	// while (current)
+	// {
+	// 	ft_printf("%d\n", current->number);
+	// 	current = current->next;
+	// }
 	return (0);
 }
