@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/25 20:32:59 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/25 20:58:35 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack *stack_b;
 	char	**arguments;
-	int		count;
 
 	arguments = validations(argc, argv);
 	if (!arguments)
@@ -85,8 +84,6 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	phase_1(&stack_a, &stack_b);
 	phase_2(&stack_a, &stack_b);
-	count = get_instruction_count();
-	ft_printf("Instructions: %d\n", count);
 	free_split(arguments);
 	ft_stcclear(&stack_a);
 	return (0);
