@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 18:04:43 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/25 21:19:50 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/26 15:55:33 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	rb(t_stack **b, bool print)
 {
 	internal_rotate(b);
 	if (print)
-		print_instruction("ra");
+		print_instruction("rb");
 }
 
 void	rr(t_stack **a, t_stack **b, bool print)
@@ -48,8 +48,5 @@ void	rr(t_stack **a, t_stack **b, bool print)
 	ra(a, false);
 	rb(b, false);
 	if (print)
-	{
-		print_instruction("ra");
-		print_instruction("rb");
-	}
+		print_instruction("rr");
 }
