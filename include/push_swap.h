@@ -6,7 +6,7 @@
 /*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 18:14:00 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/26 18:37:36 by kmarrero         ###   ########.fr       */
+/*   Updated: 2025/07/26 18:44:41 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,8 @@ void	move_nodes(t_stack **a, t_stack **b, t_move *move, char target);
 void	update_positions(t_stack *stack);
 void	sort_three(t_stack **stack);
 void	align_stack_a(t_stack **a);
-int		calculate_cost(int pos, int size);
 void	print_instruction(const char *instr);
+int		calculate_cost(int pos, int size);
 
 // Instructions to move the nodes in the stacks
 void	rra(t_stack **a, bool print);
