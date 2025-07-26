@@ -6,7 +6,7 @@
 /*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 18:06:25 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/26 18:39:13 by kmarrero         ###   ########.fr       */
+/*   Updated: 2025/07/26 22:53:10 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	print_instruction(const char *instr)
 {
-	ft_printf("%s", instr);
+	ft_printf("%s\n", instr);
 }
