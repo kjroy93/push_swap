@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotation.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 18:36:57 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/26 15:55:17 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/26 18:39:36 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,15 @@ static void	internal_reverse_rotation(t_stack **stack_operated)
 void	rra(t_stack **a, bool print)
 {
 	internal_reverse_rotation(a);
-		if (print)
-			print_instruction("rra");
+	if (print)
+		print_instruction("rra");
 }
 
 void	rrb(t_stack **b, bool print)
 {
 	internal_reverse_rotation(b);
-		if (print)
-			print_instruction("rrb");
+	if (print)
+		print_instruction("rrb");
 }
 
 void	rrr(t_stack **a, t_stack **b, bool print)

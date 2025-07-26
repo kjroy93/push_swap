@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_targets_in_b.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 18:22:56 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/25 15:41:48 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/26 18:42:46 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static t_stack	*find_max(t_stack *b)
 {
-	t_stack *max;
+	t_stack	*max;
 
 	max = b;
 	while (b)

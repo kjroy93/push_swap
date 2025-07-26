@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 18:14:00 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/25 20:16:16 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/26 18:37:36 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,16 @@ typedef struct s_stack
 
 typedef struct s_cost
 {
-	int cost_a;
-	int cost_b;
-} 	t_cost;
+	int	cost_a;
+	int	cost_b;
+}	t_cost;
 
 typedef struct s_move
 {
 	int		total_moves;
-	t_stack *node;	// Node of stack A
+	t_stack	*node;	// Node of stack A
 	t_cost	cost;
-} 	t_move;
+}	t_move;
 
 // Stack creation functions
 t_stack	*create_stack(char **arguments);
@@ -60,7 +60,7 @@ int		only_whitespaces(char **argv);
 int		main_validation(char **argv);
 
 // Sort the stacks
-t_move 	find_best_move(t_stack *a, t_stack *b);
+t_move	find_best_move(t_stack *a, t_stack *b);
 t_move	find_move_to_a(t_stack *a, t_stack *b);
 void	prepare_stacks(t_stack *a, t_stack *b, char target);
 void	assign_targets(t_stack *a, t_stack *b);
@@ -71,7 +71,6 @@ void	sort_three(t_stack **stack);
 void	align_stack_a(t_stack **a);
 int		calculate_cost(int pos, int size);
 void	print_instruction(const char *instr);
-int		get_instruction_count(void);
 
 // Instructions to move the nodes in the stacks
 void	rra(t_stack **a, bool print);

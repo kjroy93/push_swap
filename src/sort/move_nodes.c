@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_nodes.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 18:33:41 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/26 15:57:38 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/26 18:42:59 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static void	reverse_rotate_both(t_stack **a, t_stack **b, t_move *move)
 	}
 }
 
-static void rotate_one_stack(t_stack **a, t_stack **b, t_move *move)
+static void	rotate_one_stack(t_stack **a, t_stack **b, t_move *move)
 {
 	while (move->cost.cost_a > 0)
 	{

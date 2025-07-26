@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   calculate_cost.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:36:40 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/26 15:55:37 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/26 18:43:40 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,21 @@ static int	calculate_total_moves(int cost_a, int cost_b)
 	int	common;
 	int	total;
 
-	// Optimization for rrr or rr
 	if ((cost_a >= 0 && cost_b >= 0) || (cost_a <= 0 && cost_b <= 0))
 	{
 		if (abs(cost_a) < abs(cost_b))
 			common = abs(cost_a);
 		else
 			common = abs(cost_b);
-		remainer = abs(cost_a - cost_b); // Difference to obtain the not common moves
+		remainer = abs(cost_a - cost_b);
 		total = (common + remainer);
 	}
-	// You can't use rr or rrr. The pos in the stack is not on the same side
 	else
 		total = (abs(cost_a) + abs(cost_b));
 	return (total + 1);
 }
 
-static t_move	get_move_info(t_stack *m_node, int size_a, int size_b, bool from_b)
+static t_move	get_move(t_stack *m_node, int size_a, int size_b, bool from_b)
 {
 	t_move	move_info;
 
@@ -58,13 +56,13 @@ static t_move	get_move_info(t_stack *m_node, int size_a, int size_b, bool from_b
 		move_info.cost.cost_b = calculate_cost(m_node->target->pos, size_b);
 	}
 	move_info.total_moves = calculate_total_moves(
-		move_info.cost.cost_a,
-		move_info.cost.cost_b
-	);
+			move_info.cost.cost_a,
+			move_info.cost.cost_b
+			);
 	return (move_info);
 }
 
-t_move find_best_move(t_stack *a, t_stack *b)
+t_move	find_best_move(t_stack *a, t_stack *b)
 {
 	t_stack	*tmp;
 	t_move	current_move;
@@ -79,7 +77,7 @@ t_move find_best_move(t_stack *a, t_stack *b)
 	size_b = stack_size(b);
 	while (tmp)
 	{
-		current_move = get_move_info(tmp, size_a, size_b, false);
+		current_move = get_move(tmp, size_a, size_b, false);
 		if (current_move.total_moves < best_move.total_moves)
 			best_move = current_move;
 		tmp = tmp->next;
@@ -91,10 +89,10 @@ t_move	find_move_to_a(t_stack *a, t_stack *b)
 {
 	t_stack	*tmp;
 	t_move	move;
-	int	size_a;
+	int		size_a;
 
 	tmp = b;
 	size_a = stack_size(a);
-	move = get_move_info(tmp, size_a, 0, true);
+	move = get_move(tmp, size_a, 0, true);
 	return (move);
 }

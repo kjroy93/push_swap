@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 18:04:43 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/26 15:55:33 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/26 18:39:52 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-static void internal_rotate(t_stack **stack_operated)
+static void	internal_rotate(t_stack **stack_operated)
 {
 	t_stack	*first;
 	t_stack	*second;

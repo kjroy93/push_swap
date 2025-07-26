@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_targets_in_a.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 15:41:36 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/25 19:52:14 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/26 18:42:38 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static t_stack	*find_min(t_stack *a)
 	return (min);
 }
 
-static t_stack *find_target_node_in_a(t_stack *a, t_stack *b_node)
+static t_stack	*find_target_node_in_a(t_stack *a, t_stack *b_node)
 {
 	t_stack	*current;
 	t_stack	*target;

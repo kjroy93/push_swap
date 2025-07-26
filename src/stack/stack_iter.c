@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_iter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:10:43 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/25 14:06:23 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/26 18:39:00 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	update_positions(t_stack *stack)
 	int	i;
 
 	i = 0;
-	while(stack)
+	while (stack)
 	{
 		stack->pos = i;
 		stack = stack->next;

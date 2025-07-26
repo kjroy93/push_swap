@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/26 16:00:19 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/26 18:38:04 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static char	**validations(int argc, char **argv)
 		return (parse_multiple_arguments(argc, argv));
 }
 
-static void phase_2(t_stack **a, t_stack **b)
+static void	phase_2(t_stack **a, t_stack **b)
 {
 	t_move	move;
 	int		size;
@@ -42,7 +42,7 @@ static void phase_2(t_stack **a, t_stack **b)
 	align_stack_a(a);
 }
 
-static void phase_1(t_stack **a, t_stack **b)
+static void	phase_1(t_stack **a, t_stack **b)
 {
 	t_move	move;
 	int		size;
@@ -66,7 +66,7 @@ static void phase_1(t_stack **a, t_stack **b)
 int	main(int argc, char **argv)
 {
 	t_stack	*stack_a;
-	t_stack *stack_b;
+	t_stack	*stack_b;
 	// t_stack	*current;
 	char	**arguments;
 

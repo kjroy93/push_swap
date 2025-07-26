@@ -1,8 +1,18 @@
-#include "libft.h"
-#include "push_swap.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/26 18:06:25 by kmarrero          #+#    #+#             */
+/*   Updated: 2025/07/26 18:39:13 by kmarrero         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void print_instruction(const char *instr)
+#include "libft.h"
+
+void	print_instruction(const char *instr)
 {
-	write(1, instr, ft_strlen(instr));
-	write(1, "\n", 1);
+	ft_printf("%s", instr);
 }
