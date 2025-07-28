@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 14:19:17 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/25 00:00:59 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/29 01:01:43 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ void	sb(t_stack **b, bool print)
 
 void	ss(t_stack **a, t_stack **b, bool print)
 {
-	swap_internal(a);
-	swap_internal(b);
+	sa(a, false);
+	sb(b, false);
 	if (print)
 		print_instruction("ss");
 }

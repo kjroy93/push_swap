@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:12:43 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/28 21:42:55 by kmarrero         ###   ########.fr       */
+/*   Updated: 2025/07/29 00:55:53 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ int	only_whitespaces(char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			if (argv[i][j] != ' ' && (argv[i][j] < 9 || argv[i][j] > 13))
+			if (argv[i][j] != ' ' && !(argv[i][j] >= 9 && argv[i][j] <= 13))
 				return (0);
 			j++;
 		}

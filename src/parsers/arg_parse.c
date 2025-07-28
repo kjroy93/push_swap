@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_parse.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 17:14:40 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/26 18:38:42 by kmarrero         ###   ########.fr       */
+/*   Updated: 2025/07/29 00:50:14 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char	**parse_single_argument(char *arg)
 	arguments = args(arg);
 	if (!arguments)
 		return (NULL);
-	if (!main_validation(arguments))
+	if (!main_validations(arguments))
 	{
 		free_split(arguments);
 		return (NULL);
@@ -103,7 +103,7 @@ char	**parse_multiple_arguments(int argc, char **argv)
 	free(buffer);
 	if (!arguments)
 		return (NULL);
-	if (!main_validation(arguments))
+	if (!main_validations(arguments))
 	{
 		free_split(arguments);
 		return (NULL);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
+/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/28 21:45:30 by kmarrero         ###   ########.fr       */
+/*   Updated: 2025/07/29 01:21:24 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,10 @@ static void	phase_1(t_stack **a, t_stack **b)
 	t_move	move;
 	int		size;
 
-	size = stack_size(*a);
 	prepare_stacks(*a, *b, 'b');
 	pb(a, b, true);
 	pb(a, b, true);
+	size = stack_size(*a);
 	while (size > 3)
 	{
 		prepare_stacks(*a, *b, 'b');
