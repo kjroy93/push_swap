@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_split.c                                       :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 13:59:04 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/19 14:06:48 by kmarrero         ###   ########.fr       */
+/*   Updated: 2025/07/28 21:43:15 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,11 @@ void	free_split(char **args)
 		index++;
 	}
 	free(args);
+}
+
+void	free_list(t_stack *stack, char **arguments)
+{
+	ft_stcclear(&stack);
+	free_split(arguments);
+	ft_printf("%s\n", "Error");
 }

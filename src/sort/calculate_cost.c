@@ -6,7 +6,7 @@
 /*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:36:40 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/26 18:43:40 by kmarrero         ###   ########.fr       */
+/*   Updated: 2025/07/28 21:42:23 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ static t_move	get_move(t_stack *m_node, int size_a, int size_b, bool from_b)
 	return (move_info);
 }
 
-t_move	find_best_move(t_stack *a, t_stack *b)
+t_move	find_best_move_to_b(t_stack *a, t_stack *b)
 {
 	t_stack	*tmp;
 	t_move	current_move;
@@ -85,7 +85,7 @@ t_move	find_best_move(t_stack *a, t_stack *b)
 	return (best_move);
 }
 
-t_move	find_move_to_a(t_stack *a, t_stack *b)
+t_move	find_best_move_to_a(t_stack *a, t_stack *b)
 {
 	t_stack	*tmp;
 	t_move	move;

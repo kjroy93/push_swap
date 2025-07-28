@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:12:43 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/25 14:12:10 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/28 21:42:55 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int	is_valid_integer_format(char *str)
 	return (1);
 }
 
-int	main_validation(char **argv)
+int	main_validations(char **argv)
 {
 	int	num1;
 	int	num2;

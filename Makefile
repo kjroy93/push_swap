@@ -15,7 +15,7 @@ LIBFT_INCLUDE = $(LIBFT_DIR)/include
 SRC = src/push_swap.c				\
 	src/parsers/validations.c		\
 	src/parsers/arg_parse.c			\
-	src/free/free_split.c			\
+	src/free/free.c					\
 	src/stack/stack_utils.c			\
 	src/stack/stack_iter.c			\
 	src/stack/stack_init.c			\
@@ -29,7 +29,7 @@ SRC = src/push_swap.c				\
 	src/sort/get_targets_in_a.c		\
 	src/sort/get_targets_in_b.c		\
 	src/sort/move_nodes.c			\
-	src/sort/sort_three.c			\
+	src/sort/sort.c					\
 
 # Object files
 OBJ = $(SRC:.c=.o)
