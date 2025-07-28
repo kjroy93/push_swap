@@ -6,7 +6,7 @@
 /*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/26 18:38:04 by kmarrero         ###   ########.fr       */
+/*   Updated: 2025/07/28 21:45:30 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void	phase_2(t_stack **a, t_stack **b)
 	while (size > 0)
 	{
 		prepare_stacks(*a, *b, 'a');
-		move = find_move_to_a(*a, *b);
+		move = find_best_move_to_a(*a, *b);
 		move_nodes(a, b, &move, 'a');
 		clear_targets(a);
 		size--;
@@ -47,14 +47,14 @@ static void	phase_1(t_stack **a, t_stack **b)
 	t_move	move;
 	int		size;
 
+	size = stack_size(*a);
 	prepare_stacks(*a, *b, 'b');
 	pb(a, b, true);
 	pb(a, b, true);
-	size = stack_size(*a);
 	while (size > 3)
 	{
 		prepare_stacks(*a, *b, 'b');
-		move = find_best_move(*a, *b);
+		move = find_best_move_to_b(*a, *b);
 		move_nodes(a, b, &move, 'b');
 		size--;
 	}
@@ -65,35 +65,27 @@ static void	phase_1(t_stack **a, t_stack **b)
 
 int	main(int argc, char **argv)
 {
+	char	**arguments;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	// t_stack	*current;
-	char	**arguments;
+	int		size;
 
 	arguments = validations(argc, argv);
 	if (!arguments)
-	{
-		ft_printf("%s\n", "Error");
-		return (0);
-	}
+		return (ft_printf("%s\n", "Error"), 0);
 	stack_a = create_stack(arguments);
 	if (!stack_a)
-	{
-		ft_stcclear(&stack_a);
-		free_split(arguments);
-		ft_printf("%s\n", "Error");
-		return (0);
-	}
+		return (free_list(stack_a, arguments), 0);
 	free_split(arguments);
+	size = stack_size(stack_a);
 	stack_b = NULL;
-	phase_1(&stack_a, &stack_b);
-	phase_2(&stack_a, &stack_b);
-	// current = stack_a;
-	// while (current)
-	// {
-	// 	ft_printf("%d\n", current->number);
-	// 	current = current->next;
-	// }
+	if (!check_sorted(stack_a))
+	{
+		if (size <= 3)
+			return (mini_sort(&stack_a), 0);
+		phase_1(&stack_a, &stack_b);
+		phase_2(&stack_a, &stack_b);
+	}
 	ft_stcclear(&stack_a);
 	return (0);
 }
