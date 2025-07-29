@@ -6,7 +6,7 @@
 /*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/29 01:21:24 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/29 20:57:45 by kjroy93          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	phase_1(t_stack **a, t_stack **b)
 		move_nodes(a, b, &move, 'b');
 		size--;
 	}
-	sort_three(a);
+	mini_sort(a);
 	clear_targets(a);
 	clear_targets(b);
 }
@@ -70,6 +70,8 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 	int		size;
 
+	if (argc == 1)
+		return (0);
 	arguments = validations(argc, argv);
 	if (!arguments)
 		return (ft_printf("%s\n", "Error"), 0);
