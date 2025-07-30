@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/24 20:34:54 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/28 21:44:01 by kmarrero         ###   ########.fr       */
+/*   Created: 2025/07/28 19:34:51 by kmarrero          #+#    #+#             */
+/*   Updated: 2025/07/28 20:53:21 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	sort_three(t_stack **stack)
 	int	b;
 	int	c;
 
-	if (!stack || !*stack || !(*stack)->next || !(*stack)->next->next)
+	if (stack_size(*stack) != 3)
 		return ;
 	a = (*stack)->number;
 	b = (*stack)->next->number;

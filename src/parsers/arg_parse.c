@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   arg_parse.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 17:14:40 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/29 00:50:14 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/26 19:40:53 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ static char	*allocate_buffer(int argc, char **argv)
 	int		size;
 	int		i;
 
-	size = 0;
 	i = 1;
+	size = 0;
 	while (i < argc)
 	{
 		size += ft_strlen(argv[i]);
@@ -53,12 +53,12 @@ static void	copy_args_to_buffer(int argc, char **argv, char *buffer)
 	int	i;
 	int	j;
 
-	i = 1;
 	pos = 0;
+	i = 1;
 	while (i < argc)
 	{
-		j = 0;
 		len = ft_strlen(argv[i]);
+		j = 0;
 		while (j < len)
 		{
 			buffer[pos] = argv[i][j];
@@ -79,6 +79,8 @@ char	**parse_single_argument(char *arg)
 {
 	char	**arguments;
 
+	if (!arg)
+		return (NULL);
 	arguments = args(arg);
 	if (!arguments)
 		return (NULL);
@@ -92,17 +94,17 @@ char	**parse_single_argument(char *arg)
 
 char	**parse_multiple_arguments(int argc, char **argv)
 {
-	char	*buffer;
 	char	**arguments;
+	char	*buffer;
 
 	buffer = allocate_buffer(argc, argv);
 	if (!buffer)
 		return (NULL);
 	copy_args_to_buffer(argc, argv, buffer);
 	arguments = args(buffer);
-	free(buffer);
 	if (!arguments)
 		return (NULL);
+	free(buffer);
 	if (!main_validations(arguments))
 	{
 		free_split(arguments);

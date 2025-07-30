@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 18:04:43 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/26 18:39:52 by kmarrero         ###   ########.fr       */
+/*   Created: 2025/07/26 20:51:34 by kmarrero          #+#    #+#             */
+/*   Updated: 2025/07/30 20:38:06 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
 static void	internal_rotate(t_stack **stack_operated)
 {
@@ -20,9 +19,9 @@ static void	internal_rotate(t_stack **stack_operated)
 
 	if (!stack_operated || !(*stack_operated) || !(*stack_operated)->next)
 		return ;
-	first = *stack_operated;
+	first = (*stack_operated);
 	second = ft_stclast((*stack_operated));
-	*stack_operated = first->next;
+	(*stack_operated) = first->next;
 	(*stack_operated)->prev = NULL;
 	second->next = first;
 	first->prev = second;

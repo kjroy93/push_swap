@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 19:36:40 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/28 21:42:23 by kmarrero         ###   ########.fr       */
+/*   Created: 2025/07/26 21:17:00 by kmarrero          #+#    #+#             */
+/*   Updated: 2025/07/30 20:23:55 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int	calculate_total_moves(int cost_a, int cost_b)
 		else
 			common = abs(cost_b);
 		remainer = abs(cost_a - cost_b);
-		total = (common + remainer);
+		total = common + remainer;
 	}
 	else
 		total = (abs(cost_a) + abs(cost_b));
@@ -65,8 +65,8 @@ static t_move	get_move(t_stack *m_node, int size_a, int size_b, bool from_b)
 t_move	find_best_move_to_b(t_stack *a, t_stack *b)
 {
 	t_stack	*tmp;
-	t_move	current_move;
 	t_move	best_move;
+	t_move	current_move;
 	int		size_a;
 	int		size_b;
 
@@ -88,11 +88,11 @@ t_move	find_best_move_to_b(t_stack *a, t_stack *b)
 t_move	find_best_move_to_a(t_stack *a, t_stack *b)
 {
 	t_stack	*tmp;
-	t_move	move;
+	t_move	best_move;
 	int		size_a;
 
 	tmp = b;
 	size_a = stack_size(a);
-	move = get_move(tmp, size_a, 0, true);
-	return (move);
+	best_move = get_move(tmp, size_a, 0, true);
+	return (best_move);
 }

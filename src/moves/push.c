@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/26 18:07:44 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/26 18:30:04 by kmarrero         ###   ########.fr       */
+/*   Created: 2025/07/26 19:59:10 by kmarrero          #+#    #+#             */
+/*   Updated: 2025/07/28 18:51:26 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
 static void	internal_push(t_stack **stack_operated, t_stack **target)
 {

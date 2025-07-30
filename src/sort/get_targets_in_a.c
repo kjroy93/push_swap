@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/25 15:41:36 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/26 18:42:38 by kmarrero         ###   ########.fr       */
+/*   Created: 2025/07/28 18:34:51 by kmarrero          #+#    #+#             */
+/*   Updated: 2025/07/28 18:55:18 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ static t_stack	*find_target_node_in_a(t_stack *a, t_stack *b_node)
 {
 	t_stack	*current;
 	t_stack	*target;
-	int		min_above;
+	int		min_below;
 
 	current = a;
 	target = NULL;
-	min_above = INT_MAX;
+	min_below = INT_MAX;
 	while (current)
 	{
-		if (current->number > b_node->number && current->number < min_above)
+		if (current->number > b_node->number && current->number < min_below)
 		{
-			min_above = current->number;
+			min_below = current->number;
 			target = current;
 		}
 		current = current->next;

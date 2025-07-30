@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 18:13:42 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/26 15:53:27 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/30 21:22:07 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ t_stack	*create_stack(char **arguments)
 		value = ft_atoi(arguments[i]);
 		new = ft_stcnew_node(value);
 		if (!new)
+		{
+			ft_stcclear(&stack);
 			return (NULL);
+		}
 		ft_stcadd_back(&stack, new);
 		i++;
 	}

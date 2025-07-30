@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 18:36:57 by kjroy93           #+#    #+#             */
-/*   Updated: 2025/07/26 18:39:36 by kmarrero         ###   ########.fr       */
+/*   Created: 2025/07/26 20:31:22 by kmarrero          #+#    #+#             */
+/*   Updated: 2025/07/30 20:37:46 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
 static void	internal_reverse_rotation(t_stack **stack_operated)
 {
@@ -20,13 +19,13 @@ static void	internal_reverse_rotation(t_stack **stack_operated)
 
 	if (!stack_operated || !(*stack_operated) || !(*stack_operated)->next)
 		return ;
-	first = *stack_operated;
+	first = (*stack_operated);
 	second = ft_stclast((*stack_operated));
 	second->prev->next = NULL;
 	second->prev = NULL;
 	second->next = first;
 	first->prev = second;
-	*stack_operated = second;
+	(*stack_operated) = second;
 }
 
 void	rra(t_stack **a, bool print)

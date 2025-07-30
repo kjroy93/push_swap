@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/29 20:57:45 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/30 22:15:18 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 static char	**validations(int argc, char **argv)
 {
-	if (!argv || argc == 1 || only_whitespaces(argv))
-		return (NULL);
 	if (argc == 2)
 		return (parse_single_argument(argv[1]));
 	else
@@ -63,6 +61,20 @@ static void	phase_1(t_stack **a, t_stack **b)
 	clear_targets(b);
 }
 
+static void	sort(t_stack **a, t_stack **b, int size)
+{
+	if (!check_sorted(*a))
+	{
+		if (size <= 3)
+			mini_sort(a);
+		else
+		{
+			phase_1(a, b);
+			phase_2(a, b);
+		}
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	char	**arguments;
@@ -70,24 +82,18 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 	int		size;
 
-	if (argc == 1)
+	if (argc == 1 || only_whitespaces(argv))
 		return (0);
 	arguments = validations(argc, argv);
 	if (!arguments)
-		return (ft_printf("%s\n", "Error"), 0);
+		return (ft_putstr_fd("Error", 2), 1);
 	stack_a = create_stack(arguments);
 	if (!stack_a)
 		return (free_list(stack_a, arguments), 0);
 	free_split(arguments);
 	size = stack_size(stack_a);
 	stack_b = NULL;
-	if (!check_sorted(stack_a))
-	{
-		if (size <= 3)
-			return (mini_sort(&stack_a), 0);
-		phase_1(&stack_a, &stack_b);
-		phase_2(&stack_a, &stack_b);
-	}
+	sort(&stack_a, &stack_b, size);
 	ft_stcclear(&stack_a);
 	return (0);
 }

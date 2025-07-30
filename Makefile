@@ -12,24 +12,10 @@ INCLUDE_DIR = include
 LIBFT_INCLUDE = $(LIBFT_DIR)/include
 
 # Source files listed manually
-SRC = src/push_swap.c				\
-	src/parsers/validations.c		\
-	src/parsers/arg_parse.c			\
-	src/free/free.c					\
-	src/stack/stack_utils.c			\
-	src/stack/stack_iter.c			\
-	src/stack/stack_init.c			\
-	src/stack/clear_targets.c		\
-	src/moves/print.c				\
-	src/moves/push.c				\
-	src/moves/rotate.c				\
-	src/moves/swap.c				\
-	src/moves/reverse_rotation.c	\
-	src/sort/calculate_cost.c		\
-	src/sort/get_targets_in_a.c		\
-	src/sort/get_targets_in_b.c		\
-	src/sort/move_nodes.c			\
-	src/sort/sort.c					\
+SRC = src/push_swap.c	src/parsers/validations.c	src/parsers/arg_parse.c		src/free/free.c		src/stack/stack_utils.c		src/stack/stack_iter.c			\
+	src/stack/stack_init.c		src/stack/clear_targets.c		src/moves/print.c		src/moves/push.c		src/moves/rotate.c		src/moves/swap.c		\
+	src/moves/reverse_rotation.c		src/sort/calculate_cost.c		src/sort/get_targets_in_a.c		src/sort/get_targets_in_b.c		src/sort/move_nodes.c	\
+	src/sort/sort.c \
 
 # Object files
 OBJ = $(SRC:.c=.o)

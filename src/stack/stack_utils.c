@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 20:08:44 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/25 16:57:29 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/30 21:17:25 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void	ft_stcclear(t_stack **lst)
 	{
 		temp = (*lst)->next;
 		free(*lst);
-		(*lst) = NULL;
 		*lst = temp;
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validations.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kjroy93 <kjroy93@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/19 14:12:43 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/29 00:55:53 by kjroy93          ###   ########.fr       */
+/*   Updated: 2025/07/30 22:11:29 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ static int	is_valid_integer_format(char *str)
 	int	sign;
 	int	i;
 
-	sign = 1;
 	if (!str || *str == '\0')
 		return (0);
+	sign = 1;
 	i = 0;
 	if (str[i] == '-')
 	{
@@ -92,6 +92,8 @@ int	only_whitespaces(char **argv)
 	while (argv[i])
 	{
 		j = 0;
+		if (argv[i][0] == '\0')
+			return (1);
 		while (argv[i][j])
 		{
 			if (argv[i][j] != ' ' && !(argv[i][j] >= 9 && argv[i][j] <= 13))
