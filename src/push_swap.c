@@ -6,7 +6,7 @@
 /*   By: kmarrero <kmarrero@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/18 21:36:39 by kmarrero          #+#    #+#             */
-/*   Updated: 2025/07/30 22:15:18 by kmarrero         ###   ########.fr       */
+/*   Updated: 2025/07/31 22:16:06 by kmarrero         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,10 @@ int	main(int argc, char **argv)
 	t_stack	*stack_b;
 	int		size;
 
-	if (argc == 1 || only_whitespaces(argv))
-		return (0);
+	if (argc == 1)
+		return (1);
+	if (only_whitespaces(argv))
+		return (ft_putstr_fd("Error", 2), 1);
 	arguments = validations(argc, argv);
 	if (!arguments)
 		return (ft_putstr_fd("Error", 2), 1);
